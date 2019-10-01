@@ -36,9 +36,9 @@ export class ServisService {
     ) as Observable<BloqueHora[]>;
   }
 
-  test() {
-    return this.http.get(
-      `http://localhost:3000/json`
-    ) as Observable<BloqueHora[]>;
-  }
+  // test() {
+  //   return this.http.get(
+  //     `http://localhost:3000/json`
+  //   ) as Observable<BloqueHora[]>;
+  // }
 }

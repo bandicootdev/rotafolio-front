@@ -15,7 +15,11 @@ export class EscritorioComponent implements OnInit {
   });
   mostrarTabla = false;
   ocultar = false;
-
+  dataBloque:String;
+  dataTurno:String;
+  dataTipo_estudio:String;
+  rt:String;
+  tp:any;
   constructor(
     private servicio: ServisService
   ) { }
@@ -27,22 +31,43 @@ export class EscritorioComponent implements OnInit {
     this.mostrarTabla = false;
     this.servicio.bloqueHoras = [];
     const data = this.form.value;
-    // this.servicio.getBloquesHoras(data.bloque, data.turno, data.tipo_estudio).subscribe(
-    //   resp => {
-    //     if (resp.length > 0) {
-    //       this.servicio.bloqueHoras = resp;
-    //       this.mostrarTabla = true;
-    //     }
-    //   },
-    //   err => console.log(err)
-    // );
-    this.servicio.test().subscribe(
-      bloques => {
-        this.servicio.bloqueHoras = bloques;
-        this.mostrarTabla = true;
+    this.servicio.getBloquesHoras(data.bloque, data.turno, data.tipo_estudio).subscribe(
+      resp => {
+        if (resp.length > 0) {
+          this.servicio.bloqueHoras = resp;
+          this.mostrarTabla = true;
+        }
+        this.dataBloque = data.bloque;
+        this.dataTurno = data.turno;
+        this.dataTipo_estudio = data.tipo_estudio;
+        if(this.dataTurno=='M'){
+          this.rt = 'MATUTINO'
+        }
+        else if(this.dataTurno=='V'){
+          this.rt = 'VESPERTINO'
+        }
+        else if(this.dataTurno=='N'){
+          this.rt = 'NOCTURNO'
+        }
+        if (this.dataTipo_estudio == '1'){
+          this.tp = 'PREGRADO'
+        }
+        else if(this.dataTipo_estudio == '2'){
+          this.tp = 'POSGRADO'
+        }
+        else if(this.dataTipo_estudio == '3'){
+          this.tp = 'EXTENSION'
+        }
       },
       err => console.log(err)
     );
+    // this.servicio.test().subscribe(
+    //   bloques => {
+    //     this.servicio.bloqueHoras = bloques;
+    //     this.mostrarTabla = true;
+    //   },
+    //   err => console.log(err)
+    // );
   }
 
 }

@@ -1,5 +1,7 @@
 <div class="clock">
-    <p>{{ fecha.toLocaleDateString() }}</p>
+   <p style="display: none">{{ fecha.toLocaleDateString() }}</p>
+   <p>{{etv2}}</p>
+   <p>  {{etv1}} {{ hoy | date: 'yyyy' }}</p>
     <div class="hours">
         <div class="horas">
             <span class="mishoras">{{ fecha.toLocaleTimeString() }}</span>
