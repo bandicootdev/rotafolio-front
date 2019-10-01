@@ -1,0 +1,58 @@
+<!--Buscador-->
+<br>
+<div class="row">
+    <div class="col s2"></div>
+    <div class="col s8">
+        <div class="card">
+            <div style="text-align:center;padding:1em 0;">
+                <app-reloj class="mreloj"></app-reloj>
+            </div>
+            <div class="card-content" *ngIf="!ocultar">
+                <div class="row">
+                    <div class="col s12">
+                        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                            <div class="row" style="text-align: center">
+                                <div class="input-field col s6">
+                                    <select formControlName="bloque">
+                                        <option value="" disabled selected>Seleccione</option>
+                                        <option value="BLOQUE A">A</option>
+                                        <option value="BLOQUE B">B</option>
+                                        <option value="BLOQUE C">C</option>
+                                        <option value="BLOQUE D">D</option>
+                                        <option value="BLOQUE E">E</option>
+                                        <option value="BLOQUE F">F</option>
+                                        <option value="BLOQUE G">G</option>
+                                    </select>
+                                    <label>Bloque</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <select formControlName="turno">
+                                        <option value="" disabled selected>Seleccione</option>
+                                        <option value="M">Matutino</option>
+                                        <option value="V">Vespertino</option>
+                                        <option value="N">Nocturno</option>
+                                    </select>
+                                    <label>Turno</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <select formControlName="tipo_estudio">
+                                        <option value="" disabled selected>Seleccione</option>
+                                        <option value="1">Pregrado</option>
+                                        <option value="2">Posgrado</option>
+                                        <option value="3">Extensión</option>
+                                    </select>
+                                    <label>Tipo de Estudio</label>
+                                </div>
+                            </div>
+                            <div class="col s12" style="text-align: center">
+                                <button class="btn waves-effect waves-light" type="submit">Buscar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-dos *ngIf="mostrarTabla"></app-dos>
+<!-- Fin del Buscador-->

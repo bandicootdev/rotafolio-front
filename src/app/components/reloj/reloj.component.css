@@ -1,0 +1,14 @@
+p {
+    text-transform: capitalize;
+}
+
+.clock p {
+    margin-bottom: 2px;
+    font-size: medium;
+    font-weight: 600;
+}
+
+.hours {
+    font-size: medium;
+    font-weight: 600;
+}

@@ -1,0 +1,41 @@
+<!--Tabla-->
+<div class="row">
+    <div class="col s12">
+        <div class="card">
+            <div class="card-content">
+                <div class="row">
+                    <div class="col s12">
+                        <table class="responsive-table">
+                            <thead>
+                                <tr>
+                                    <th>Docente</th>
+                                    <th>Identificación</th>
+                                    <th>Sección</th>
+                                    <th>Materia</th>
+                                    <th>Bloque</th>
+                                    <th>Aula</th>
+                                    <th>Entrada</th>
+                                    <th>Salida</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let bloque of bloques">
+                                    <td>{{ bloque.docente }}</td>
+                                    <td>{{ bloque.identificacion }}</td>
+                                    <td>{{ bloque.seccion }}</td>
+                                    <td>{{ bloque.materia }}</td>
+                                    <td>{{ bloque.bloque }}</td>
+                                    <td>{{ bloque.aula }}</td>
+                                    <td>{{ bloque.hora_entrada | date: 'shortTime' }}</td>
+                                    <td>{{ bloque.hora_salida | date: 'shortTime' }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Fin de la Tabla-->

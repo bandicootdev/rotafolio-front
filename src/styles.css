@@ -1,0 +1,118 @@
+/* You can add global styles to this file, and also import other style files */
+
+.card .card-content {
+    padding-bottom: 0;
+    padding: 9px;
+    border-radius: 0 0 2px 2px;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1290px;
+    width: 90%;
+}
+
+@media only screen and (min-width: 0) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 992px) {}
+
+table.responsive-table tr {
+    border-bottom: none;
+    padding: 0px 61px;
+}
+
+@media only screen and (max-width: 992px) {
+    table.responsive-table th {
+        display: block;
+        text-align: left;
+    }
+}
+
+h5 {
+    font-size: 1.64rem;
+    line-height: 110%;
+    margin: 3px;
+    position: relative;
+    display: inline-block;
+}
+
+
+/*BARRA DE NAVEGACIO*/
+
+nav {
+    color: rgb(255, 255, 255);
+    background-color: #821519;
+    width: 100%;
+    height: 60px;
+    line-height: 56px;
+}
+
+
+/*BARRA DE NAVEGACIO*/
+
+
+/*Responsi barra de Materializa trabajando en navbar*/
+
+@media only screen and (min-width: 340px) {
+    html {
+        font-size: 11px;
+        color: black;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    nav,
+    nav .nav-wrapper i,
+    nav a.sidenav-trigger,
+    nav a.sidenav-trigger i {
+        height: 64px;
+        line-height: 64px;
+        font-size: large;
+    }
+}
+
+.dropdown-content li>a,
+.dropdown-content li>span {
+    font-size: 16px;
+    color: #26a69a;
+    display: block;
+    line-height: 22px;
+    padding: 14px 16px;
+    text-align: center;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    margin: 17px;
+}
+
+img {
+    border-style: none;
+    float: right;
+    margin-right: -1em;
+    margin-top: -15px;
+}
+
+td, th {
+    padding: 15px 5px;
+    display: table-cell;
+    text-align: left;
+    vertical-align: middle;
+    border-radius: 2px;
+}
+
+button#lol {
+    background-color: #821519;
+    margin: 15px;
+    height: 0px;
+}
+
+
+
