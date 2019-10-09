@@ -115,4 +115,9 @@ button#lol {
 }
 
 
-
+div#br {
+    text-align: center;
+    margin-bottom: 2px;
+    font-size: medium;
+    font-weight: 500;
+}

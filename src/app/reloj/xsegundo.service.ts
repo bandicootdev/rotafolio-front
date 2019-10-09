@@ -27,7 +27,7 @@ export class XsegundoService {
       // console.log(this.hours)
       // t.setTime(this.hours)
       let prueba = this.hours.split(':');
-      console.log(typeof prueba[2]);
+      //console.log(typeof prueba[2]);
       t.setHours(Number(prueba[0]));
       t.setMinutes(Number(prueba[1]));
       // t.setSeconds(0);

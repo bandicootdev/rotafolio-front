@@ -22,13 +22,13 @@ export class DosComponent implements OnInit {
 
   ngOnInit() {
     const bloques = this.bloqueService.bloqueHoras;
-    // console.log(bloques);
+     console.log(bloques);
     this.x.onTick.subscribe((x: Date) => {
       this.hora = x;
       console.log('-> '+x)
       this.bloques = bloques.filter(elem => {
         const horaSalida = new Date(elem.hora_salida);
-        console.log(horaSalida) 
+        //console.log(horaSalida) 
           if (this.hora >= horaSalida) {
             return false;
           } else {
