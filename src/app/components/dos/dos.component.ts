@@ -13,8 +13,8 @@ import { XsegundoService } from 'src/app/reloj/xsegundo.service';
 export class DosComponent implements OnInit {
   bloques: BloqueHora[];
   hora: Date;
-  horan: any;
-  nw;
+  horan: Date;
+
   constructor(
     private bloqueService: ServisService,
     private x: XsegundoService
@@ -22,16 +22,25 @@ export class DosComponent implements OnInit {
 
   ngOnInit() {
     const bloques = this.bloqueService.bloqueHoras;
-    // console.log(bloques);
+    console.log(bloques);
+    this.horan = new Date('11:55:00 GMT-0427')
+    var date = new Date();
+    var hours = date.getHours();
+    var ampm = hours >= 12 ? 'pm' : 'am';
     this.x.onTick.subscribe((x: Date) => {
       this.hora = x;
-      console.log('-> '+x)
+      //console.log('-> '+x)
       this.bloques = bloques.filter(elem => {
         const horaSalida = new Date(elem.hora_salida);
-        console.log(horaSalida) 
-          if (this.hora >= horaSalida) {
+        const horaEntrada = new Date(elem.hora_entrada);
+        const turno = elem.turno;
+        //console.log(horaSalida) 
+        if (this.hora >= horaSalida) {
+            console.log('1 if');
             return false;
-          } else {
+          }
+          else {
+            console.log('else');
             return true;
           }      
       });

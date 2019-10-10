@@ -26,6 +26,7 @@ export class RelojComponent implements OnInit {
     this.datos$.subscribe(x => {
       this.segundo.onTick.emit(x);
       this.fecha = x;
+      //console.log(this.fecha);
       var d = new Date();
       var days = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
       var month = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
