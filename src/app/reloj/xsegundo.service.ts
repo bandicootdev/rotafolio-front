@@ -21,17 +21,17 @@ export class XsegundoService {
       t.setDate(1);
       t.setMonth(0);
       t.setFullYear(1900);
-      // let time = t.getHours()+":"+t.getMinutes()+":"+t.getSeconds();
-      // let pipeHourFormat = new ConvertFrom24To12FormatPipe();
-      // this.hours = pipeHourFormat.transform(time);
-      // // console.log(this.hours)
-      // // t.setTime(this.hours)
-      // let prueba = this.hours.split(':');
-      // //console.log(typeof prueba[2]);
-      // t.setHours(Number(prueba[0]));
-      // t.setMinutes(Number(prueba[1]));
-      // // t.setSeconds(0);
-      // //console.log(t);
+      let time = t.getHours()+":"+t.getMinutes()+":"+t.getSeconds();
+      let pipeHourFormat = new ConvertFrom24To12FormatPipe();
+      this.hours = pipeHourFormat.transform(time);
+      // console.log(this.hours)
+      // t.setTime(this.hours)
+      let prueba = this.hours.split(':');
+      // console.log(typeof prueba[2]);
+      t.setHours(Number(prueba[0]));
+      t.setMinutes(Number(prueba[1]));
+      // t.setSeconds(0);
+      // console.log(t);
       this.infofecha$.next(t);
     });
     return this.infofecha$.asObservable();

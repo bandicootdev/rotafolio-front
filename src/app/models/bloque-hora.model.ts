@@ -25,8 +25,10 @@ export class BloqueHora {
         public turno: string,
         public hora_entrada: Date,
         public hora_salida: Date,
-        public tipo_estudio: number
-    ) { }
+        public tipo_estudio: number,
+        public condicion: string
+    ) {
+    }
 }
 
 /* <th>Hora</th>

@@ -15,11 +15,11 @@ export class EscritorioComponent implements OnInit {
   });
   mostrarTabla = false;
   ocultar = false;
-  dataBloque:String;
-  dataTurno:String;
-  dataTipo_estudio:String;
-  rt:String;
-  tp:any;
+  dataBloque: String;
+  dataTurno: String;
+  dataTipo_estudio: String;
+  rt: String;
+  tp: any;
   constructor(
     private servicio: ServisService
   ) { }
@@ -40,23 +40,19 @@ export class EscritorioComponent implements OnInit {
         this.dataBloque = data.bloque;
         this.dataTurno = data.turno;
         this.dataTipo_estudio = data.tipo_estudio;
-        if(this.dataTurno=='M'){
-          this.rt = 'MATUTINO'
+        if (this.dataTurno === 'M') {
+          this.rt = 'MATUTINO';
+        } else if (this.dataTurno === 'V') {
+          this.rt = 'VESPERTINO';
+        } else if (this.dataTurno === 'N') {
+          this.rt = 'NOCTURNO';
         }
-        else if(this.dataTurno=='V'){
-          this.rt = 'VESPERTINO'
-        }
-        else if(this.dataTurno=='N'){
-          this.rt = 'NOCTURNO'
-        }
-        if (this.dataTipo_estudio == '1'){
-          this.tp = 'PREGRADO'
-        }
-        else if(this.dataTipo_estudio == '2'){
-          this.tp = 'POSGRADO'
-        }
-        else if(this.dataTipo_estudio == '3'){
-          this.tp = 'EXTENSION'
+        if (this.dataTipo_estudio === '1') {
+          this.tp = 'PREGRADO';
+        } else if (this.dataTipo_estudio === '2') {
+          this.tp = 'POSGRADO';
+        } else if (this.dataTipo_estudio === '3') {
+          this.tp = 'EXTENSION';
         }
       },
       err => console.log(err)

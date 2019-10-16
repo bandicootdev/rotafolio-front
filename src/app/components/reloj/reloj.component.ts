@@ -26,13 +26,14 @@ export class RelojComponent implements OnInit {
     this.datos$.subscribe(x => {
       this.segundo.onTick.emit(x);
       this.fecha = x;
-      //console.log(this.fecha);
-      var d = new Date();
-      var days = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
-      var month = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+      // console.log(this.fecha);
+      const d = new Date();
+      const days = ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'];
+      // tslint:disable-next-line:max-line-length
+      const month = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
       this.etv = this.hoy.getFullYear();
-      this.etv1 = month[this.hoy.getMonth()]; 
-      this.etv2 = days[this.hoy.getDay()];  
+      this.etv1 = month[this.hoy.getMonth()];
+      this.etv2 = days[this.hoy.getDay()];
     });
   }
 }
